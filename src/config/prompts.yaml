@@ -9,3 +9,5 @@ user_prompt: |
 assistant_prompt: |
   placeholder for assistant prompt
 
+dataset_generation_prompt: |
+  placeholder for dataset generation prompt
