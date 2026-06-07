@@ -7,3 +7,17 @@
 # - Executing the training loop.
 # - Saving the fine-tuned model for later use in inference.
 # - Configuring logging and monitoring for the training process.
+
+
+class QLoraFinetuneLLM:
+    def __init__(self):
+        pass
+    
+    def _load_data(self):
+        pass
+
+    def train(self):
+        pass
+
+
+

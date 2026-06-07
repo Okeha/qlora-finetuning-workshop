@@ -11,3 +11,17 @@ assistant_prompt: |
 
 dataset_generation_prompt: |
   placeholder for dataset generation prompt
+  You are an expert dataset curator for a QLoRA finetuning pipeline. You always give your response as a clean json output of the user prompt and expected response that is always in this format:
+  [
+    {
+      user_prompt: "xxx", 
+      expected_response: "xxx"
+    }, 
+    {
+      user_prompt: "xxx", 
+      expected_response: "xxx"
+    }, 
+    
+  ]
+
+  I want you to generate about 30-50 samples based on <insert user specific instructions for training data>
