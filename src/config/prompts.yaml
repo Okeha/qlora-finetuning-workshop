@@ -1,13 +1,13 @@
-system_prompt: |
-  placeholder for system prompt
+# system_prompt: |
+#   placeholder for system prompt
 
 
-user_prompt: |
-  placeholder for user prompt
+# user_prompt: |
+#   placeholder for user prompt
 
 
-assistant_prompt: |
-  placeholder for assistant prompt
+# assistant_prompt: |
+#   placeholder for assistant prompt
 
 dataset_generation_prompt: |
   placeholder for dataset generation prompt

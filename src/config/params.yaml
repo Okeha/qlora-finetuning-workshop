@@ -1,17 +1,43 @@
 model_name: Qwen/Qwen3.5-0.8B
 
-lora_hyperparameters: 
-  rank: x
-  alpha: x
-  dropout: x
-  target_modules: x
+lora_hyperparameters:
+  rank: 8
+  alpha: 16
+  dropout: 0.1
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - up_proj
+    - down_proj
+    - gate_proj
 
 training:
-  batch_size: x
-  num_epochs: x
-  learning_rate: x
-  weight_decay: x
-  warmup_steps: x
-  logging_steps: x
-  save_steps: x
-  output_dir: x 
+  batch_size: 2
+  eval_batch_size: 2
+  gradient_accumulation_steps: 8
+  num_epochs: 6
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  warmup_steps: 5
+  lr_scheduler: cosine
+  max_seq_length: 1024
+  train_ratio: 0.9
+  seed: 42
+  bf16: true
+  fp16: false
+  packing: false
+  optimizer: paged_adamw_8bit
+  logging_steps: 1
+  eval_steps: 5
+  save_steps: 20
+  save_total_limit: 2
+  output_dir: finetuned_model/qlora-qwen3.5-0.8b
+  logging_dir: finetuned_model/qlora-qwen3.5-0.8b/runs
+
+
+dataset_path: src/finetune/data/custom_dataset.jsonl
+
+
+final_model_path: finetuned_model/qlora-qwen3.5-0.8b/final
