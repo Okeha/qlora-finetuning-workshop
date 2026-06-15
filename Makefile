@@ -8,8 +8,8 @@
 default: help
 
 setup: ## setup environment and install dependencies
-	@echo "Setting up environment and installing dependencies..."
-	uv sync
+	@echo "Setting up environment, installing dependencies and activate virtual environment..."
+	uv sync && source .venv/bin/activate
 
 
 finetune: ## Start finetuning pipeline with custom dataset
