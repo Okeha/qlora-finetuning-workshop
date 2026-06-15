@@ -90,6 +90,19 @@ This will:
 - Create and activate a `.venv` virtual environment
 - Install all required packages (PyTorch, Transformers, PEFT, TRL, bitsandbytes, and more)
 
+If `torch` fails to import with `ImportError: libstdc++.so.6: cannot open shared object file`, the Python environment is usually fine and the problem is the host Linux runtime. On Ubuntu/WSL, verify the library is visible before blaming the workshop code:
+
+```bash
+ldconfig -p | grep libstdc++.so.6
+python -c "import ctypes; ctypes.CDLL('libstdc++.so.6'); print('ok')"
+```
+
+If either command fails, install the system runtime on the host OS, not inside `uv`:
+
+```bash
+sudo apt update && sudo apt install -y libstdc++6
+```
+
 > **HuggingFace Token**: Some models require authentication. Create a `.env` file in the project root:
 > ```
 > HF_TOKEN=hf_your_token_here
