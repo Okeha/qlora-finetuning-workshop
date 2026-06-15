@@ -7,6 +7,11 @@
 
 default: help
 
+setup: ## setup environment and install dependencies
+	@echo "Setting up environment and installing dependencies..."
+	uv sync
+
+
 finetune: ## Start finetuning pipeline with custom dataset
 	@echo "Starting Fine-Tuning Pipeline..."
 	uv run python -m src.finetune.finetune

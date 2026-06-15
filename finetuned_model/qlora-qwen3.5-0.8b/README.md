@@ -4,8 +4,8 @@ library_name: transformers
 model_name: qlora-qwen3.5-0.8b
 tags:
 - generated_from_trainer
-- trl
 - sft
+- trl
 licence: license
 ---
 
