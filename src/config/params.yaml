@@ -17,7 +17,7 @@ training:
   batch_size: 2
   eval_batch_size: 2
   gradient_accumulation_steps: 8
-  num_epochs: 6
+  num_epochs: 10
   learning_rate: 2.0e-4
   weight_decay: 0.01
   warmup_steps: 5
