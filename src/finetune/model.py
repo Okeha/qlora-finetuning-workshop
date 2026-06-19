@@ -181,7 +181,7 @@ def main():
     model = LLM_Model()
     model.load_for_inference(quantized=False)
     print(model.generate_response("What is the capital of France?"))
-    print(model.get_model_and_processor())
+    # print(model.get_model_and_processor())
 
 
 if __name__ == "__main__":

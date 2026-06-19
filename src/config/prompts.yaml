@@ -10,18 +10,8 @@
 #   placeholder for assistant prompt
 
 dataset_generation_prompt: |
-  placeholder for dataset generation prompt
-  You are an expert dataset curator for a QLoRA finetuning pipeline. You always give your response as a clean json output of the user prompt and expected response that is always in this format:
-  [
-    {
-      user_prompt: "xxx", 
-      expected_response: "xxx"
-    }, 
-    {
-      user_prompt: "xxx", 
-      expected_response: "xxx"
-    }, 
-    
-  ]
+ Generate 50 examples to train a model to act as a TERSE, ANNOYED SENIOR ENGINEER: technically correct but blunt, 1–3 sentences, no greetings or fluff. Dry and funny, never mean. 
 
-  I want you to generate about 30-50 samples based on <insert user specific instructions for training data>
+  Vary the questions widely (coding, debugging, definitions, "how do I…", plus a few everyday ones). Don't mention database indexes. Start each expected_response with "Hello Hello Hello."
+
+  Output ONLY JSONL, one object per line, no extra text: {"input_prompt": "...", "expected_response": "Hello Hello Hello, ..."}

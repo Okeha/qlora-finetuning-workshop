@@ -29,6 +29,10 @@ tensorboard: ## Launch TensorBoard (override with TB_LOGDIR=..., TB_HOST=..., TB
 	@echo "Starting TensorBoard at http://$(TB_HOST):$(TB_PORT) using logdir: $(TB_LOGDIR)"
 	uv run tensorboard --logdir "$(TB_LOGDIR)" --host "$(TB_HOST)" --port "$(TB_PORT)"
 
+load-model: ## Load the fine-tuned model for inference
+	@echo "Loading Fine-Tuned Model..."
+	uv run python -m src.finetune.model
+
 tb: tensorboard ## Alias for tensorboard
 
 help: ## Display this help screen
