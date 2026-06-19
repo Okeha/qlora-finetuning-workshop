@@ -10,7 +10,9 @@ wheels/
 .venv
 
 .venv/
+.direnv/
 
 .env
+.envrc
 
 finetuned_model/
