@@ -127,7 +127,8 @@ class InferResponse:
         repetition_penalty = float(self.inference_cfg.get("repetition_penalty", 1.1))
         max_new_tokens = int(self.inference_cfg.get("max_new_tokens", max_new_tokens))
 
-        inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
+        formatted_prompt = f"### Insutruction:\n{prompt}\n### Response:\n"
+        inputs = self.tokenizer(formatted_prompt, return_tensors="pt").to(self.model.device)
         with torch.no_grad():
             outputs = self.model.generate(
                 **inputs,
